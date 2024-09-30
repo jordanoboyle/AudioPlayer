@@ -75,3 +75,40 @@ body {
     transform: rotate(360deg);
   }
 }
+
+/* Navigation of audiofile */
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.action-btn {
+  background-color: white;
+  border: 0;
+  border-radius: 5px;
+  color: rgba(0, 0, 255, 0.311);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px;
+  margin: 0 20px;
+
+}
+
+.action-btn:hover {
+  background-color: rgba(0, 0, 255, 0.311);
+  ;
+  border-radius: 5px;
+  border: 0;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px;
+  margin: 0 20px;
+}
+
+.action-btn.action-btn-play {
+  font-size: 30px;
+}
