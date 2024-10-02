@@ -48,6 +48,18 @@ body {
   width: 110px;
 }
 
+.img-container::after {
+  content: '';
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  transform: translate(-50%, 50%);
+}
+
 .img-container img {
   border-radius: 50%;
   object-fit: cover;
@@ -111,4 +123,52 @@ body {
 
 .action-btn.action-btn-play {
   font-size: 30px;
+}
+
+/* Styling Music Information */
+
+.music-info {
+  background-color: white;
+  border-radius: 15px 15px 0 0;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: calc(100% - 40px);
+  padding: 10px 10px 10px 150px;
+  opacity: 0;
+  transform: translateY(0%);
+  transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+  z-index: 0;
+}
+
+
+
+.music-container.play .music-info {
+  opacity: 0.5;
+  transform: translateY(-100%);
+  box-shadow: 20px 20px 20px 20px rgba(0, 0, 255, .2);
+
+  /* I need to figure out how to move this box shadow at some point. */
+}
+
+.music-info h4 {
+  margin: 5px;
+}
+
+.progress-container {
+  background: purple;
+  border-radius: 6px;
+  opacity: 1;
+  cursor: pointer;
+  margin: 10px 0;
+  height: 4px;
+  width: 100%;
+}
+
+.progress {
+  background-color: #fe8daa;
+  border-radius: 5px;
+  height: 100%;
+  width: 0%;
+  transition: width 0.1s linear;
 }
