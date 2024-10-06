@@ -96,11 +96,20 @@ function updateProgress(e) {
     progress.insertAdjacentElement('afterend', timeStamp);
   }
   
-  let pleasingElapsed = Math.floor(currentTime);
-  let pleasingDuration = Math.floor(duration);
-  console.log(`Time Elapsed: ${pleasingElapsed} / Total Duration: ${pleasingDuration}`);
+  let minElapsed = function calculateElapsedTime(currentTime) {
+    let min = 0;
+    let seconds = currentTime;
+
+    return true;
+  }
+
+  let minDuration = Math.floor(duration / 60);
+  let secondDuration = Math.floor(duration % 60);
+  // console.log(`Time Elapsed: ${pleasingElapsed} / Total Duration: ${pleasingDuration}`);
   
-  timeStamp.textContent = `Time Elapsed: ${pleasingElapsed}`;
+  
+
+  timeStamp.textContent = `${minElapsed} / ${minDuration}:${secondDuration}`;
 
   
 

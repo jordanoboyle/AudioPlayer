@@ -175,6 +175,7 @@ body {
 
 #timestamp {
   background-color: aquamarine;
-  margin-left: 60%;
+  width: fit-content;
+  margin-left: 80%;
   font-size: 5px;
 }
