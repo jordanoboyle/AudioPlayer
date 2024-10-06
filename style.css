@@ -172,3 +172,9 @@ body {
   width: 0%;
   transition: width 0.1s linear;
 }
+
+#timestamp {
+  background-color: aquamarine;
+  margin-left: 60%;
+  font-size: 5px;
+}

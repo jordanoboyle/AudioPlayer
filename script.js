@@ -47,7 +47,68 @@ function pauseSong() {
   audio.pause();
 }
 
-//Event Listeners 
+//Previous Song
+function previousSong() {
+  songIndex--;
+  //If it is the first song we don't want to just stop or crash, revert to last song in list. 
+  if (songIndex < 0) {
+    songIndex = songs.length - 1;
+  }
+
+  loadSong(songs[songIndex]);
+
+  playSong();
+  
+}
+
+//Next Song
+function nextSong() {
+  songIndex++;
+
+  if (songIndex > songs.length - 1) {
+    songIndex = 0;
+  }
+
+  loadSong(songs[songIndex]);
+  
+  playSong();
+}
+
+
+//Update the time progress for Song;
+function updateProgress(e) {
+  const {duration, currentTime} = e.srcElement;
+
+  // console.log(duration, currentTime);
+
+  const progressPercent = (currentTime / duration) * 100;
+  // console.log(progressPercent);
+
+  progress.style.width = `${progressPercent}%`;
+
+  
+  
+  let timeStamp = document.querySelector('#timestamp');
+  
+  if (!timeStamp) {
+    timeStamp = document.createElement('p');
+    timeStamp.id = 'timestamp';
+    progress.insertAdjacentElement('afterend', timeStamp);
+  }
+  
+  let pleasingElapsed = Math.floor(currentTime);
+  let pleasingDuration = Math.floor(duration);
+  console.log(`Time Elapsed: ${pleasingElapsed} / Total Duration: ${pleasingDuration}`);
+  
+  timeStamp.textContent = `Time Elapsed: ${pleasingElapsed}`;
+
+  
+
+}
+
+//EVENT LISTERNERS
+
+//Play Song
 playBtn.addEventListener('click', () => {
   const isPlaying = musicContainer.classList.contains('play');
 
@@ -57,3 +118,10 @@ playBtn.addEventListener('click', () => {
     playSong();
   }
 });
+
+//Change Song
+prevBtn.addEventListener('click', previousSong);
+nextBtn.addEventListener('click', nextSong);
+
+//Time-Song Update
+audio.addEventListener('timeupdate', updateProgress);
