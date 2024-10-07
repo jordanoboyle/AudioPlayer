@@ -184,3 +184,32 @@ body {
   font-size: 5px;
   text-align: right;
 }
+
+/* Trying to make the song title Squigle Text */
+@keyframes wiggleText {
+  from {
+    transform: translateY(-0.25ex);
+  }
+
+  to {
+    transform: translateY(0.25ex);
+  }
+
+}
+
+#title {
+  font-size: 17px;
+}
+
+#wiggle>span {
+  animation: wiggleText;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+
+  display: inline-block;
+
+  white-space: pre;
+
+}

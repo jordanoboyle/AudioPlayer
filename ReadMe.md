@@ -1,3 +1,9 @@
+# AudioFile Player
+This is a simple audiofile player, though it is mostly meant for music it can be used for any type of audio. Built using Vanilla JS, CSS, HTML5 and FontAwesome library. This is meant to showcase building different little aspects of a more extensive media player. (Dynamic progress bars, timestamps and CSS animations for little graphics).
+
+## Project Overview
+This project leverages Font Awesome, the free kits available. 
+
 ## Getting Started
 
 ### Prerequisites
