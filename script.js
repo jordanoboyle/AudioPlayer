@@ -15,7 +15,7 @@ const cover = document.getElementById('cover');
 
 // Song Titles:
 
-const songs = ['hey', 'summer', 'ukulele'];
+const songs = ['hey', 'summer', 'ukulele', 'night-detective'];
 
 //Keep track of song  
 let songIndex = 2;
@@ -79,15 +79,11 @@ function nextSong() {
 function updateProgress(e) {
   const {duration, currentTime} = e.srcElement;
 
-  // console.log(duration, currentTime);
-
   const progressPercent = (currentTime / duration) * 100;
-  // console.log(progressPercent);
 
   progress.style.width = `${progressPercent}%`;
 
-  
-  
+  //Display Dynamic Time Stamp
   let timeStamp = document.querySelector('#timestamp');
   
   if (!timeStamp) {
@@ -96,20 +92,27 @@ function updateProgress(e) {
     progress.insertAdjacentElement('afterend', timeStamp);
   }
   
-  let minElapsed = function calculateElapsedTime(currentTime) {
-    let min = 0;
-    let seconds = currentTime;
-
-    return true;
-  }
+  // function calculateElapsedTime(currentTime) {
+  //   let min = 0;
+  //   let seconds = 0;
+  //   if (currentTime) {}
+  //   return true;
+  // }
 
   let minDuration = Math.floor(duration / 60);
   let secondDuration = Math.floor(duration % 60);
-  // console.log(`Time Elapsed: ${pleasingElapsed} / Total Duration: ${pleasingDuration}`);
+
+  let minCurrent = Math.floor(currentTime / 60);
+  let secondCurrent = Math.floor(currentTime % 60);
+  console.log("Showing dynam current min:sec", minCurrent, secondCurrent);
   
   
 
-  timeStamp.textContent = `${minElapsed} / ${minDuration}:${secondDuration}`;
+  timeStamp.textContent = `
+      ${minCurrent < 10 ? '0' + minCurrent : minCurrent}:${secondCurrent < 10 ? '0' + secondCurrent : secondCurrent} 
+      / 
+      ${minDuration}:${secondDuration}
+    `;
 
   
 

@@ -175,7 +175,12 @@ body {
 
 #timestamp {
   background-color: aquamarine;
-  width: fit-content;
-  margin-left: 80%;
+  border: solid;
+  border-color: #fe8daa;
+  border-radius: 3px;
+  padding: 1px;
+  margin-top: 1px;
+  margin-left: 65%;
   font-size: 5px;
+  text-align: right;
 }
