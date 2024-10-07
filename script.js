@@ -92,13 +92,6 @@ function updateProgress(e) {
     progress.insertAdjacentElement('afterend', timeStamp);
   }
   
-  // function calculateElapsedTime(currentTime) {
-  //   let min = 0;
-  //   let seconds = 0;
-  //   if (currentTime) {}
-  //   return true;
-  // }
-
   let minDuration = Math.floor(duration / 60);
   let secondDuration = Math.floor(duration % 60);
 
@@ -111,7 +104,7 @@ function updateProgress(e) {
   timeStamp.textContent = `
       ${minCurrent < 10 ? '0' + minCurrent : minCurrent}:${secondCurrent < 10 ? '0' + secondCurrent : secondCurrent} 
       / 
-      ${minDuration}:${secondDuration}
+      ${isNaN(minDuration) ? '00' : minDuration}:${isNaN(secondDuration) ? '00' : secondDuration}
     `;
 
   
